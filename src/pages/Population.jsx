@@ -19,172 +19,103 @@ function Population() {
           </nav>
         </aside>
 
-        <article className="col-md-9">
-          <h2 className="h2 text-success mb-4">Ареал поширення зайців</h2>
-          
-          <section id="continents" className="mt-4">
+        <div class="col-md-9">
+        <h2 class="h2 text-success">Ареал гепардів</h2>
+  
+        <article class="mt-4">
+          <section id="continents">
             <h3>
-              <button className="btn btn-success w-100 text-start" 
-                      type="button" 
-                      data-bs-toggle="collapse" 
-                      data-bs-target="#continentsList" 
-                      aria-expanded="false" 
-                      aria-controls="continentsList">
+              <button class="btn btn-success w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#continentsList">
                 Континенти
               </button>
             </h3>
-            <div className="collapse" id="continentsList">
-              <ul className="list-group mb-3">
-                <li className="list-group-item">Європа</li>
-                <li className="list-group-item">Азія</li>
-                <li className="list-group-item">Північна Америка</li>
+            <div class="collapse show" id="continentsList">
+              <ul class="list-group mb-3">
+                <li class="list-group-item">Африка</li>
+                <li class="list-group-item">Азія (лише в Ірані)</li>
               </ul>
             </div>
           </section>
-
-          <section id="subcontinents" className="mt-4">
+  
+          <section id="subcontinents">
             <h3>
-              <button className="btn btn-success w-100 text-start" 
-                      type="button" 
-                      data-bs-toggle="collapse" 
-                      data-bs-target="#subcontinentsList" 
-                      aria-expanded="false" 
-                      aria-controls="subcontinentsList">
+              <button class="btn btn-success w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#subcontinentsList">
                 Субконтиненти
               </button>
             </h3>
-            <div className="collapse" id="subcontinentsList">
-              <ul className="list-group mb-3">
-                <li className="list-group-item">Західна Азія</li>
-                <li className="list-group-item">Центральна Азія</li>
+            <div class="collapse show" id="subcontinentsList">
+              <ul class="list-group mb-3">
+                <li class="list-group-item">Центральна Азія (лише Іран)</li>
+                <li class="list-group-item">Східна Африка</li>
+                <li class="list-group-item">Південна Африка</li>
+                <li class="list-group-item">Західна Африка</li>
               </ul>
             </div>
           </section>
-
-          <section id="countries" className="mt-4">
+  
+          <section id="countries">
             <h3>
-              <button className="btn btn-success w-100 text-start" 
-                      type="button" 
-                      data-bs-toggle="collapse" 
-                      data-bs-target="#countriesList" 
-                      aria-expanded="false" 
-                      aria-controls="countriesList">
+              <button class="btn btn-success w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#countriesList">
                 Країни
               </button>
             </h3>
-            <div className="collapse" id="countriesList">
-              <ul className="list-group mb-3 list-columns">
-                <li className="list-group-item">Албанія</li>
-                <li className="list-group-item">Австрія</li>
-                <li className="list-group-item">Білорусь</li>
-                <li className="list-group-item">Бельгія</li>
-                <li className="list-group-item">Боснія і Герцеговина</li>
-                <li className="list-group-item">Болгарія</li>
-                <li className="list-group-item">Хорватія</li>
-                <li className="list-group-item">Чехія</li>
-                <li className="list-group-item">Данія</li>
-                <li className="list-group-item">Естонія</li>
-                <li className="list-group-item">Фінляндія</li>
-                <li className="list-group-item">Франція</li>
-                <li className="list-group-item">Німеччина</li>
-                <li className="list-group-item">Греція</li>
-                <li className="list-group-item">Угорщина</li>
-                <li className="list-group-item">Іран</li>
-                <li className="list-group-item">Ірак</li>
-                <li className="list-group-item">Ізраїль</li>
-                <li className="list-group-item">Італія</li>
-                <li className="list-group-item">Латвія</li>
-                <li className="list-group-item">Ліхтенштейн</li>
-                <li className="list-group-item">Литва</li>
-                <li className="list-group-item">Люксембург</li>
-                <li className="list-group-item">Північна Македонія</li>
-                <li className="list-group-item">Молдова</li>
-                <li className="list-group-item">Чорногорія</li>
-                <li className="list-group-item">Нідерланди</li>
-                <li className="list-group-item">Польща</li>
-                <li className="list-group-item">Румунія</li>
-                <li className="list-group-item">Росія</li>
-                <li className="list-group-item">Сербія</li>
-                <li className="list-group-item">Словаччина</li>
-                <li className="list-group-item">Словенія</li>
-                <li className="list-group-item">Іспанія</li>
-                <li className="list-group-item">Швейцарія</li>
-                <li className="list-group-item">Сирія</li>
-                <li className="list-group-item">Туреччина</li>
-                <li className="list-group-item">Україна</li>
+            <div class="collapse show" id="countriesList">
+              <ul class="list-group mb-3">
+                <li class="list-group-item">Намібія</li>
+                <li class="list-group-item">Ботсвана</li>
+                <li class="list-group-item">Кенія</li>
+                <li class="list-group-item">Танзанія</li>
+                <li class="list-group-item">Південна Африка</li>
+                <li class="list-group-item">Мозамбік</li>
+                <li class="list-group-item">Зімбабве</li>
+                <li class="list-group-item">Іран (останній залишок популяції в Азії)</li>
               </ul>
             </div>
           </section>
-
-          <section id="introduced" className="mt-4">
+  
+          <section id="introduced">
             <h3>
-              <button className="btn btn-success w-100 text-start" 
-                      type="button" 
-                      data-bs-toggle="collapse" 
-                      data-bs-target="#introducedList" 
-                      aria-expanded="false" 
-                      aria-controls="introducedList">
-                Інтродуковані види
+              <button class="btn btn-success w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#introducedList">
+                Інтродуковані в
               </button>
             </h3>
-            <div className="collapse" id="introducedList">
-              <ul className="list-group mb-3">
-                <li className="list-group-item">Канада</li>
-                <li className="list-group-item">Сполучені Штати Америки</li>
-                <li className="list-group-item">Бразилія</li>
-                <li className="list-group-item">Чилі</li>
-                <li className="list-group-item">Аргентина</li>
-                <li className="list-group-item">Уругвай</li>
-                <li className="list-group-item">Парагвай</li>
-                <li className="list-group-item">Болівія</li>
-                <li className="list-group-item">Перу</li>
-                <li className="list-group-item">Австралія</li>
-                <li className="list-group-item">Нова Зеландія</li>
+            <div class="collapse" id="introducedList">
+              <ul class="list-group mb-3">
+                <li class="list-group-item">Немає підтверджених випадків успішної інтродукції в інші регіони.</li>
               </ul>
             </div>
           </section>
-
-          <section id="biogeographic" className="mt-4">
+  
+          <section id="biogeographic">
             <h3>
-              <button className="btn btn-success w-100 text-start" 
-                      type="button" 
-                      data-bs-toggle="collapse" 
-                      data-bs-target="#biogeographicList" 
-                      aria-expanded="false" 
-                      aria-controls="biogeographicList">
+              <button class="btn btn-success w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#biogeographicList">
                 Біогеографічні зони
               </button>
             </h3>
-            <div className="collapse" id="biogeographicList">
-              <ul className="list-group mb-3">
-                <li className="list-group-item">Нотогея</li>
-                <li className="list-group-item">Неарктика</li>
-                <li className="list-group-item">Неотропіка</li>
-                <li className="list-group-item">Палеарктика</li>
+            <div class="collapse show" id="biogeographicList">
+              <ul class="list-group mb-3">
+                <li class="list-group-item">Палеарктика (лише Іран)</li>
+                <li class="list-group-item">Афротропіка (основна частина популяції)</li>
               </ul>
             </div>
           </section>
-
-          <section id="biomes" className="mt-4">
+  
+          <section id="biomes">
             <h3>
-              <button className="btn btn-success w-100 text-start" 
-                      type="button" 
-                      data-bs-toggle="collapse" 
-                      data-bs-target="#biomesList" 
-                      aria-expanded="false" 
-                      aria-controls="biomesList">
-                Біоми WWF
+              <button class="btn btn-success w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#biomesList">
+                WWF Біоми
               </button>
             </h3>
-            <div className="collapse" id="biomesList">
-              <ul className="list-group">
-                <li className="list-group-item">Помірні луки</li>
-                <li className="list-group-item">Савани і чагарники</li>
-                <li className="list-group-item">Субтропічний ліс</li>
+            <div class="collapse show" id="biomesList">
+              <ul class="list-group">
+                <li class="list-group-item">Саванни та чагарники</li>
+                <li class="list-group-item">Трав'янисті рівнини</li>
+                <li class="list-group-item">Пустелі та напівпустелі</li>
               </ul>
             </div>
           </section>
         </article>
+        </div>
       </div>
     </main>
   );
