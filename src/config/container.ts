@@ -22,7 +22,7 @@ container.bind<IConfig>('Config').toConstantValue({
 // Зв'язуємо інтерфейс бази даних з його реалізацією як одиночний екземпляр (singleton)
 container.bind<IDatabase>(TYPES.IDatabase).to(MongoDatabase).inSingletonScope();
 
-// Пряме зв'язування конкретного класу RabbitRepository як одиночного екземпляру
+// Пряме зв'язування конкретного класу CheetahRepository як одиночного екземпляру
 container.bind(CheetahRepository).toSelf().inSingletonScope();
 
 export { container };
