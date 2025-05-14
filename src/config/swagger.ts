@@ -211,7 +211,7 @@ export const swaggerSpec = {
                     tailWidth: {
                         type: 'number',
                         description: 'Довжина хвоста гепарда в сантиметрах',
-                    }
+                    },
                 },
             },
         },

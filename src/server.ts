@@ -30,7 +30,7 @@ const database = container.get<IDatabase>(TYPES.IDatabase);
 const appConfig = container.get<IConfig>('Config');
 
 // Підключаємо обробники HTTP-запитів до REST API
-import cheetahRoutes from './routes/cheetahs'
+import cheetahRoutes from './routes/cheetahs';
 app.use('/api/cheetahs', cheetahRoutes);
 
 // Отримуємо порт з конфігурації

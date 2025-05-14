@@ -69,7 +69,7 @@ describe('API вебдодатку сайту про гепардів', () => {
                 weight: 2.5,
                 gender: 'male' as const,
                 description: 'Гепард стрункий',
-                tailWidth: 50
+                tailWidth: 50,
             };
 
             // Виконуємо POST-запит для створення запису про гепарда
@@ -107,7 +107,7 @@ describe('API вебдодатку сайту про гепардів', () => {
                 weight: 3.2,
                 gender: 'male',
                 description: 'Звичайний гепард',
-                tailWidth: 50
+                tailWidth: 50,
             });
             await testCheetah.save();
 
@@ -136,7 +136,7 @@ describe('API вебдодатку сайту про гепардів', () => {
                 weight: 47,
                 gender: 'male',
                 description: 'Стрункий гепард',
-                tailWidth: 45, 
+                tailWidth: 45,
             });
             const savedCheetah = await testCheetah.save();
 
@@ -144,12 +144,12 @@ describe('API вебдодатку сайту про гепардів', () => {
             const res = await chai.request(app).get(`/api/cheetahs/${String(savedCheetah._id)}`);
             expect(res).to.have.status(200);
             expect(res.body).to.have.property('name', 'Стрункий');
-            expect(res.body).to.have.property('age', 1);
+            expect(res.body).to.have.property('age', 2);
             expect(res.body).to.have.property('height', 60);
             expect(res.body).to.have.property('weight', 47);
             expect(res.body).to.have.property('gender', 'male');
             expect(res.body).to.have.property('description', 'Стрункий гепард');
-            expect(res.body).to.have.property('tailWidth', 50);
+            expect(res.body).to.have.property('tailWidth', 45);
         });
 
         it('має повернути 404 для неіснуючого гепарда', async () => {
