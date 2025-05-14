@@ -1,17 +1,17 @@
 {
-  "name": "rabbit-server-application",
+  "name": "cheetah-server-application",
   "version": "1.0.0",
-  "description": "Серверний додаток для сайту про зайців",
+  "description": "Серверний додаток для сайту про гепардів",
   "main": "dist/src/server.js",
   "scripts": {
     "start": "node dist/src/server.js",
+    "start:dev": "nodemon --exec ts-node src/server.ts",
     "build": "npm run lint && npm run format && tsc",
     "test": "mocha -r ts-node/register \"tests/**/*.ts\" --timeout 600000 --exit",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
     "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\""
   },
-  
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
@@ -22,7 +22,6 @@
     "reflect-metadata": "^0.2.2",
     "swagger-ui-express": "^5.0.1"
   },
-
   "devDependencies": {
     "@types/body-parser": "^1.19.5",
     "@types/chai": "^4.3.20",
@@ -39,6 +38,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.0.1",
     "mocha": "^10.2.0",
+    "nodemon": "^3.1.10",
     "prettier": "^3.1.0",
     "ts-node": "^10.9.2",
     "typescript": "^4.9.5"

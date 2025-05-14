@@ -2,7 +2,7 @@ import 'reflect-metadata';
 import { Container } from 'inversify';
 import { IDatabase } from '../interfaces/IDatabase';
 import { MongoDatabase } from '../database/MongoDatabase';
-import { RabbitRepository } from '../repositories/RabbitRepository';
+import { CheetahRepository } from '../repositories/CheetahRepository';
 import { TYPES } from '../types/types';
 import { NODE_ENV } from './env';
 
@@ -23,6 +23,6 @@ container.bind<IConfig>('Config').toConstantValue({
 container.bind<IDatabase>(TYPES.IDatabase).to(MongoDatabase).inSingletonScope();
 
 // Пряме зв'язування конкретного класу RabbitRepository як одиночного екземпляру
-container.bind(RabbitRepository).toSelf().inSingletonScope();
+container.bind(CheetahRepository).toSelf().inSingletonScope();
 
 export { container };
