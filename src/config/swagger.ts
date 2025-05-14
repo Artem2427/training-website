@@ -18,11 +18,20 @@ export const swaggerSpec = {
             description: 'Development server',
         },
     ],
+    tags: [
+        {
+            name: 'Cheetahs',
+            description: 'Операції з гепардами',
+        },
+    ],
     // Визначення кінцевих точок (endpoints) REST API та операцій з ними
     paths: {
+        
         '/api/cheetahs': {
+           
             // GET запит для отримання всіх гепардів
             get: {
+                tags: ['Cheetahs'],
                 summary: 'Отримати всіх гепардів',
                 responses: {
                     '200': {
@@ -41,6 +50,7 @@ export const swaggerSpec = {
 
             // POST запит для створення нового гепарда
             post: {
+                tags: ['Cheetahs'],
                 summary: 'Створити нового гепарда',
                 requestBody: {
                     required: true,
@@ -67,6 +77,7 @@ export const swaggerSpec = {
         '/api/cheetahs/{id}': {
             // GET запит для отримання гепарда за ID
             get: {
+                tags: ['Cheetahs'],
                 summary: 'Отримати гепарда за ID',
                 parameters: [
                     {
@@ -92,6 +103,7 @@ export const swaggerSpec = {
 
             // PUT запит для повного оновлення гепарда за ID
             put: {
+                tags: ['Cheetahs'],
                 summary: 'Повністю оновити гепарда',
                 parameters: [
                     {
@@ -124,6 +136,7 @@ export const swaggerSpec = {
             },
             // PATCH запит для часткового оновлення гепарда за ID
             patch: {
+                tags: ['Cheetahs'],
                 summary: 'Частково оновити гепарда',
                 parameters: [
                     {
@@ -156,6 +169,7 @@ export const swaggerSpec = {
             },
             // DELETE запит для видалення даних про гепарда за ID
             delete: {
+                tags: ['Cheetahs'],
                 summary: 'Видалити дані про гепарда',
                 parameters: [
                     {
