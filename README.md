@@ -29,6 +29,6 @@ API реалізовано за допомогою вебфреймворку Ex
 1. Зберіть проект: `npm run build`
 1. Виконайте тести: `npm test`
 1. Запустіть сервер: `npm start`
-1. Відкрийте Swagger з документацією API за адресою: `http://localhost:5000/api-docs`
+1. Відкрийте Swagger з документацією API за адресою: `http://localhost:5001/api-docs`
 
 - [Інші завдання](../../tree/main/README.md)

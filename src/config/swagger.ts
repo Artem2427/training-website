@@ -26,9 +26,7 @@ export const swaggerSpec = {
     ],
     // Визначення кінцевих точок (endpoints) REST API та операцій з ними
     paths: {
-        
         '/api/cheetahs': {
-           
             // GET запит для отримання всіх гепардів
             get: {
                 tags: ['Cheetahs'],
