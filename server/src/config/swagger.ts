@@ -1,37 +1,46 @@
+import { PORT } from './env';
+
 // Експорт специфікації Swagger/OpenAPI для документації про API
 export const swaggerSpec = {
     // Версія специфікації OpenAPI
     openapi: '3.0.0',
     // Загальна інформація про API
     info: {
-        title: 'API Сайту про Зайців',
+        title: 'API Сайту про Гепардів',
         version: '1.0.0',
-        description: 'Документація API для Сайту про Зайців',
+        description: 'Документація API для Сайту про Гепардів',
     },
     // Налаштування серверів для тестування API
     servers: [
         {
             url:
                 process.env.CODESPACE_NAME !== undefined
-                    ? `https://${process.env.CODESPACE_NAME}-5000.app.github.dev`
-                    : 'http://localhost:5000',
+                    ? `https://${process.env.CODESPACE_NAME}-5001.app.github.dev`
+                    : `http://localhost:${PORT}`,
             description: 'Development server',
+        },
+    ],
+    tags: [
+        {
+            name: 'Cheetahs',
+            description: 'Операції з гепардами',
         },
     ],
     // Визначення кінцевих точок (endpoints) REST API та операцій з ними
     paths: {
-        '/api/rabbits': {
-            // GET запит для отримання всіх зайців
+        '/api/cheetahs': {
+            // GET запит для отримання всіх гепардів
             get: {
-                summary: 'Отримати всіх зайців',
+                tags: ['Cheetahs'],
+                summary: 'Отримати всіх гепардів',
                 responses: {
                     '200': {
-                        description: 'Список всіх зайців',
+                        description: 'Список всіх гепардів',
                         content: {
                             'application/json': {
                                 schema: {
                                     type: 'array',
-                                    items: { $ref: '#/components/schemas/Rabbit' },
+                                    items: { $ref: '#/components/schemas/Cheetah' },
                                 },
                             },
                         },
@@ -39,23 +48,24 @@ export const swaggerSpec = {
                 },
             },
 
-            // POST запит для створення нового зайця
+            // POST запит для створення нового гепарда
             post: {
-                summary: 'Створити нового зайця',
+                tags: ['Cheetahs'],
+                summary: 'Створити нового гепарда',
                 requestBody: {
                     required: true,
                     content: {
                         'application/json': {
-                            schema: { $ref: '#/components/schemas/Rabbit' },
+                            schema: { $ref: '#/components/schemas/Cheetah' },
                         },
                     },
                 },
                 responses: {
                     '201': {
-                        description: "Створений об'єкт зайця",
+                        description: "Створений об'єкт гепарда",
                         content: {
                             'application/json': {
-                                schema: { $ref: '#/components/schemas/Rabbit' },
+                                schema: { $ref: '#/components/schemas/Cheetah' },
                             },
                         },
                     },
@@ -63,112 +73,116 @@ export const swaggerSpec = {
             },
         },
 
-        // Операції для конкретного зайця за ID
-        '/api/rabbits/{id}': {
-            // GET запит для отримання зайця за ID
+        // Операції для конкретного гепарда за ID
+        '/api/cheetahs/{id}': {
+            // GET запит для отримання гепарда за ID
             get: {
-                summary: 'Отримати зайця за ID',
+                tags: ['Cheetahs'],
+                summary: 'Отримати гепарда за ID',
                 parameters: [
                     {
                         in: 'path',
                         name: 'id',
                         required: true,
                         schema: { type: 'string' },
-                        description: 'ID зайця',
+                        description: 'ID гепарда',
                     },
                 ],
                 responses: {
                     '200': {
-                        description: "Об'єкт зайця",
+                        description: "Об'єкт гепарда",
                         content: {
                             'application/json': {
-                                schema: { $ref: '#/components/schemas/Rabbit' },
+                                schema: { $ref: '#/components/schemas/Cheetah' },
                             },
                         },
                     },
-                    '404': { description: 'Зайця не знайдено' },
+                    '404': { description: 'Гепарда не знайдено' },
                 },
             },
 
-            // PUT запит для повного оновлення зайця за ID
+            // PUT запит для повного оновлення гепарда за ID
             put: {
-                summary: 'Повністю оновити зайця',
+                tags: ['Cheetahs'],
+                summary: 'Повністю оновити гепарда',
                 parameters: [
                     {
                         in: 'path',
                         name: 'id',
                         required: true,
                         schema: { type: 'string' },
-                        description: 'ID зайця',
+                        description: 'ID гепарда',
                     },
                 ],
                 requestBody: {
                     required: true,
                     content: {
                         'application/json': {
-                            schema: { $ref: '#/components/schemas/Rabbit' },
+                            schema: { $ref: '#/components/schemas/Cheetah' },
                         },
                     },
                 },
                 responses: {
                     '200': {
-                        description: "Оновлений об'єкт зайця",
+                        description: "Оновлений об'єкт гепарда",
                         content: {
                             'application/json': {
-                                schema: { $ref: '#/components/schemas/Rabbit' },
+                                schema: { $ref: '#/components/schemas/Cheetah' },
                             },
                         },
                     },
-                    '404': { description: 'Зайця не знайдено' },
+                    '404': { description: 'Гепарда не знайдено' },
                 },
             },
-            // PATCH запит для часткового оновлення зайця за ID
+            // PATCH запит для часткового оновлення гепарда за ID
             patch: {
-                summary: 'Частково оновити зайця',
+                tags: ['Cheetahs'],
+                summary: 'Частково оновити гепарда',
                 parameters: [
                     {
                         in: 'path',
                         name: 'id',
                         required: true,
                         schema: { type: 'string' },
-                        description: 'ID зайця',
+                        description: 'ID гепарда',
                     },
                 ],
                 requestBody: {
                     required: true,
                     content: {
                         'application/json': {
-                            schema: { $ref: '#/components/schemas/Rabbit' },
+                            schema: { $ref: '#/components/schemas/Cheetah' },
                         },
                     },
                 },
                 responses: {
                     '200': {
-                        description: "Оновлений об'єкт зайця",
+                        description: "Оновлений об'єкт гепарда",
                         content: {
                             'application/json': {
-                                schema: { $ref: '#/components/schemas/Rabbit' },
+                                schema: { $ref: '#/components/schemas/Cheetah' },
                             },
                         },
                     },
-                    '404': { description: 'Зайця не знайдено' },
+                    '404': { description: 'Гепарда не знайдено' },
                 },
             },
-            // DELETE запит для видалення даних про зайця за ID
+            // DELETE запит для видалення даних про гепарда за ID
             delete: {
-                summary: 'Видалити дані про зайця',
+                tags: ['Cheetahs'],
+                summary: 'Видалити дані про гепарда',
                 parameters: [
                     {
                         in: 'path',
                         name: 'id',
                         required: true,
                         schema: { type: 'string' },
-                        description: 'ID зайця',
+                        description: 'ID гепарда',
                     },
                 ],
                 responses: {
                     '200': { description: 'Повідомлення про успішне видалення' },
-                    '404': { description: 'Зайця не знайдено' },
+                    '404': { description: 'Гепарда не знайдено' },
                 },
             },
         },
@@ -178,35 +192,39 @@ export const swaggerSpec = {
     components: {
         // Схеми даних
         schemas: {
-            // Схема об'єкта Заєць
-            Rabbit: {
+            // Схема об'єкта Гепарда
+            Cheetah: {
                 type: 'object',
-                required: ['name', 'age', 'height', 'weight', 'gender'],
+                required: ['name', 'age', 'height', 'weight', 'gender', 'tailWidth'],
                 properties: {
                     name: {
                         type: 'string',
-                        description: "Ім'я зайця",
+                        description: "Ім'я гепарда",
                     },
                     age: {
                         type: 'number',
-                        description: 'Вік зайця у роках',
+                        description: 'Вік гепарда у роках',
                     },
                     height: {
                         type: 'number',
-                        description: 'Висота зайця в сантиметрах',
+                        description: 'Висота гепарда в сантиметрах',
                     },
                     weight: {
                         type: 'number',
-                        description: 'Вага зайця в кілограмах',
+                        description: 'Вага гепарда в кілограмах',
                     },
                     gender: {
                         type: 'string',
                         enum: ['male', 'female'],
-                        description: 'Стать зайця',
+                        description: 'Стать гепарда',
                     },
                     description: {
                         type: 'string',
-                        description: "Опис зайця (необов'язкове поле)",
+                        description: "Опис гепарда (необов'язкове поле)",
+                    },
+                    tailWidth: {
+                        type: 'number',
+                        description: 'Довжина хвоста гепарда в сантиметрах',
                     },
                 },
             },
